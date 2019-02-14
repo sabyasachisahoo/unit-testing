@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 col-sm-8 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h5>Social link goes here</h5>
+        </div>
+        <div class="card-body">
+          <div role="form">
+            <div class="form-group">
+              <input type="url" name="linkUrl" id="url"
+              #link class="form-control" [(ngModel)]="linkUrl"
+              placeholder="https://example.com"
+              pattern="https://.*" size="20"
+              required>
+              <button class="btn btn-primary" (click)="addNewLink()" [disabled]="linkUrl == null">Add new link</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="list-group" *ngFor="let link of links; let i = index">
+          <a href= "link?.link" class="list-group-item list-group-item-action">{{link?.link}} </a>
+            <button type="button" (click)="removeLink(i)" class="btn btn-outline-danger"> Remove </button> 
+        </div>
+  </div>
+</div>
